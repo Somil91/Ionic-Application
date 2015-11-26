@@ -1,0 +1,18 @@
+<ion-view title="Login">
+    <ion-content padding="true" class="has-header">
+        <form class="list">
+            <ion-list>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Username</span>
+                    <input type="text" placeholder="Username" ng-model="login.username">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="Password" ng-model="login.password">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <a href="#" class="button button-stable button-block" ng-click="checkLoginCredentials()">Log in</a>
+        </form>
+    </ion-content>
+</ion-view>
