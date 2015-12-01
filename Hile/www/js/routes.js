@@ -7,35 +7,23 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-      
-        
+
+
+
     .state('login', {
-      url: '/page1',
+      url: '/login',
       templateUrl: 'templates/login.html',
       controller: 'loginCtrl'
     })
-        
-      
-    
-      
-        
-    .state('tabsController.homeDetails', {
-      url: '/page3',
-      views: {
-        'tab2': {
-          templateUrl: 'templates/homeDetails.html',
-          controller: 'homeDetailsCtrl'
-        }
-      }
+
+    .state('tabsController', {
+      url: '/home',
+      abstract:true,
+      templateUrl: 'templates/tabsController.html'
     })
-        
-      
-    
-      
-        
+
     .state('tabsController.allHomes', {
-      url: '/page4',
+      url: '/allHomes',
       views: {
         'tab1': {
           templateUrl: 'templates/allHomes.html',
@@ -43,31 +31,29 @@ angular.module('app.routes', [])
         }
       }
     })
-        
-      
-    
-      
-        
-    .state('myHome', {
-      url: '/page5',
-      templateUrl: 'templates/myHome.html',
-      controller: 'myHomeCtrl'
+
+    .state('tabsController.allHomes.myHome', {
+      url: '/myHome',
+      params:{homeData:null},
+      views: {
+        'tab1@tabsController': {
+          templateUrl: 'templates/myHome.html',
+          controller: 'myHomeCtrl'
+        }
+      }
     })
-        
-      
-    
-      
-    .state('tabsController', {
-      url: '/page2',
-      abstract:true,
-      templateUrl: 'templates/tabsController.html'
+
+    .state('tabsController.homeDetails', {
+      url: '/homeDetails',
+      views: {
+        'tab2': {
+          templateUrl: 'templates/homeDetails.html',
+          controller: 'homeDetailsCtrl'
+        }
+      }
     })
-      
-    
-      
-        
     .state('tabsController.aboutUs', {
-      url: '/page6',
+      url: '/aboutUs',
       views: {
         'tab3': {
           templateUrl: 'templates/aboutUs.html',
@@ -75,11 +61,15 @@ angular.module('app.routes', [])
         }
       }
     })
-     
-      
+
+
+
+
+
+
     ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/page1');
+  $urlRouterProvider.otherwise('/login');
 
 });

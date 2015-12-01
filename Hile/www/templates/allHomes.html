@@ -2,8 +2,8 @@
     <ion-content padding="true" class="has-header">
         <h4>All Homes List</h4>
         <div class="list">
-            <a class="item item-thumbnail-left" href="#" ng-repeat="home in allHomes.homesList">
-                <img src="{{}}">
+            <a class="item item-thumbnail-left" href="#" ng-repeat="home in allHomes.homesList" ui-sref="tabsController.allHomes.myHome({ homeData: home })">
+                <img src="./img/home.png">
                 <h2>{{home.name}}</h2>
                 <p>{{home.owner_mail}}</p>
                 <i class="icon ion-ios-telephone-outline"></i>
@@ -18,3 +18,4 @@
                 <p>{{home.owner_mail}}</p>
             </ion-item>
         </ion-list> -->
+s

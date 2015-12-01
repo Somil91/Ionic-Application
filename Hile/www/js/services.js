@@ -39,5 +39,6 @@ angular.module('app.services', [])
 
 .constant("EPA", {
     "BASE": "https://hile.herokuapp.com/api/",
-    "ALL_HOMES": "homes"
+    "ALL_HOMES": "homes",
+    "All_HOME_PRODUCTS":"products/"
 });
